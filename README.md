@@ -5,4 +5,4 @@ These are my beginner projects
 3) Playlist meta data grab (Spotipy)
 4) X and O
 5) Blackjack
-6)
+6) Hangman (req: word_list and ascii_art)
