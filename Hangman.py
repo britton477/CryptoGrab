@@ -23,12 +23,13 @@ while True:
     # Print the welcome stage
     print(ascii_art.logo)
     print(stages[life])
-    print(display)
+    print(f"{' '.join(display)}")
 
     while game_on:
 
         # Ask the user to guess a letter and assign their answer to a variable called guess.
         guess = input("Guess a letter: ").lower()
+        print("\n" * 80)
         
         # This will let the user know they are guessing repeats
         if guess in letters:
@@ -36,7 +37,7 @@ while True:
 
         # If the letter is wrong the user will lose a life
         # The guessed letter will also be added to a list
-        if not guess in chosen_word:
+        if guess not in chosen_word:
             life = life - 1
             letters.append(guess)
             print(f"You chose {guess}, this letter is not in the word!\nYou lose a life!")
@@ -66,6 +67,7 @@ while True:
     # Give the user a chance to replay the game from the begining
     replay = input("Would you like to play again: Y or N?").lower()
     if replay == "y":
+        print("\n" * 80)
         game_on = True
         continue
     else:
