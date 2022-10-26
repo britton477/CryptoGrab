@@ -37,10 +37,14 @@ while True:
 
         # If the letter is wrong the user will lose a life
         # The guessed letter will also be added to a list
+        # But if you have guessed the letter already you wont lose a life!
         if guess not in chosen_word:
-            life = life - 1
-            letters.append(guess)
-            print(f"You chose {guess}, this letter is not in the word!\nYou lose a life!")
+            if guess in letters:
+                print(f"You have already guessed {guess}, try again!")
+            elif guess not in chosen_word:
+                life = life - 1
+                letters.append(guess)
+                print(f"You chose {guess}, this letter is not in the word!\nYou lose a life!")
 
         # If the letter is correct it will be displayed for the user
         for position in range(word_length):
